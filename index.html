@@ -136,8 +136,8 @@
 
     <div class="content">
         <div class="header">
-            <h1> Methodology - Fires Surge from Farmlands, Threatening Amazon's Native Forests </h1>
-            <p class="subhead">Intensified Agricultural Burning Pushes Devastating Fires into Untouched Forests, Worsening Environmental Crisis</p>
+            <h1> Methodology </h1>
+            <p class="subhead"> The Amazon Faces a New Threat: Fire </p>
         </div>
     </div>
 
@@ -146,15 +146,78 @@
             <p>By <a href="https://renatadaou.github.io/">Renata Daou</a></p>
 
         </div>
-        <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
-            line up okay.</p>
-        <p>You can use this for things other than headers if you want, too.</p>
+        <h1>How did I find the story?</h1>
+    <p>I came across the story because my parents, who live in Manaus, sent videos showing the thick fog covering the city. They also showed me pictures of the river, which was unusually dry. They had never seen anything like it. I’ve lived in Manaus for 18 years, and I haven’t either. What struck me as odd was that local reporting focused on how deforestation was down by half, without mentioning any of these alarming signs, including the ones sent through SMS to residents of Manaus alerting the population of poor air quality. Something felt off, so I decided to dig deeper.</p>
+
+    <h1>How did I make the graphs/maps?</h1>
+    <p>Information came from:</p>
+    <p>Assis, L. F. F. G.; Ferreira, K. R.; Vinhas, L.; Maurano, L.; Almeida, C.; Carvalho, A.; Rodrigues, J.; Maciel, A.; Camargo, C. TerraBrasilis: A Spatial Data Analytics Infrastructure for Large-Scale Thematic Mapping. ISPRS International Journal of Geo-Information. 8, 513, 2019. DOI: 10.3390/ijgi8110513</p>
+    <p>I downloaded the INPE data from here: <a href="https://terrabrasilis.dpi.inpe.br/">https://terrabrasilis.dpi.inpe.br/</a></p>
+    <p>Shapefiles for map: <a href="https://terrabrasilis.dpi.inpe.br/downloads/">https://terrabrasilis.dpi.inpe.br/downloads/</a></p>
+    <p>Information for graphs: <a href="https://terrabrasilis.dpi.inpe.br/app/dashboard/fires/biomes/aggregated/">https://terrabrasilis.dpi.inpe.br/app/dashboard/fires/biomes/aggregated/</a></p>
+
+    <h2>Graphs:</h2>
+    <p>First, I went to this <a href="https://terrabrasilis.dpi.inpe.br/app/dashboard/fires/biomes/aggregated/">website.</a> There, I could filter the information I needed based on three panels: “Deforestation Dashboard (PRODES), which presents the annual rates and increases in deforestation in the Legal Amazon and Cerrado; Warning Dashboard (DETER), which shows warnings of evidence of changes in forest cover in the Legal Amazon and Cerrado; and Fire Spots, which lists the hotspots in deforestation areas and on rural properties in the CAR in the Amazon biome.”</p>
+    <img src="paineis.png" alt="website Terrabrasilis">
+    <p>I mainly worked with the fire spot data by saving it as a CSV file and uploading it into Google Sheets. This allowed me to create pivot tables, making the information easier to organize, present, and understand.</p>
+    <img src="spreadsheets.png" alt="Google Sheets">
+    <p>On the website, to find the information on primary forests, I downloaded the information on this table:</p>
+    <img src="primarytable.png" alt="Primary Forest Table">
+    <p>The table shows the subcategories of forest fires deforestation which include recent deforestation, consolidated deforestation, forest fires in primary areas, forest fires in secondary areas and others. When you click on the table on the website, you have the option to download its data. This is what the table looks like when you first download the raw data:</p>
+    <img src="raw.png" alt="Raw Data Table">
+    <p>After uploading the data to Google Sheets, I filtered it to display only the "Floresta" category from the downloaded spreadsheet, which corresponds to the "Vegetação primária" classification on the website. To understand the trend, I had to specifically filter out only the primary forest fires from all the categories. This revealed that, despite the overall decline in deforestation and forest fires, the number of forest fires in primary areas had actually tripled. Primary forest fires are a subset of forest fires, which themselves are a subset of deforestation.</p>
+    <img src="spreed2.png" alt="Spreedsheets">
+    <img src="spreed3.png" alt="Spreedsheets">
+    <p>For the other tables, I followed the same process, filtering the information as needed by Rural Environmental Registry (CAR), state, type of forest, and other criteria, always downloading the CSV files for further analysis.</p>
+    <p>Here are the spreadsheet links:</p>
+    <ul>
+        <li><a href="desmatamentoflorestaprimaria">desmatamentoflorestaprimaria</a></li>
+        <li><a href="permonthallfires">permonthallfires</a></li>
+        <li><a href="desmatamentosamazonas.csv">desmatamentosamazonas.csv</a></li>
+        <li><a href="firesnocar">firesnocar</a></li>
+        <li><a href="fireswithcar">fireswithcar</a></li>
+    </ul>
+    <p>After that, I plugged the spreadsheets on DataWrapper to create easy-to-understand graphs.</p>
+
+    <h2>Maps:</h2>
+    <p>To create the maps, I downloaded Shapefiles from here. To build a complete map, I needed to download both the deforestation shapefiles and the supporting shapefiles. The supporting shapefiles provided details like municipality and state boundaries, hydrography, and other features, as shown here:</p>
+    <img src="path/to/supporting_shapefiles_image.jpg" alt="Supporting Shapefiles">
+    <p>I used these shapefiles to get the information on locations of forest fires:</p>
+    <img src="path/to/forest_fire_shapefiles_image.jpg" alt="Forest Fire Shapefiles">
+    <p>These were how all the shapefiles' raw data looked together to create the map:</p>
+    <img src="path/to/combined_shapefiles_image.jpg" alt="Combined Shapefiles">
+    <p>Once all the shapefiles were downloaded, I filtered the data by the type of deforestation labeled “Cicatriz de Queimada,” which means forest fire scar. This allowed me to pinpoint the locations and dates of where the forest fires occurred.</p>
+    <p>With that, I could visually track the shift in forest fire locations, as indicated by the graphs. The map allowed me to pinpoint these new areas and observe how they changed over time.</p>
+    <p>Using both the graphs and maps, I was able to discuss the situation with experts and gain a deeper understanding of how the combination of climate change and human activity has intensified forest fires and contributed to their shifting locations.</p>
+
+    <h1>Who is monitoring the deforestation?</h1>
+    <p>The National Institute for Space Research (INPE) is not responsible for enforcing fire laws or punishing offenders. Its main job is to gather and share data on vegetation fires through its Fire Monitoring Program. INPE uses satellite images to detect fires. These images show fire hotspots, indicating fire presence in a specific pixel. Pixel sizes can range from 375 x 375 meters to 5 x 4 kilometers, depending on the satellite. One hotspot can mean multiple fires, and large fires can appear as several hotspots in nearby pixels.</p>
+    <p>One pixel can contain several fire fronts, so one hotspot might actually be multiple fires. Large fires may be shown as multiple hotspots over several pixels. Different satellites might detect the same fire event throughout the day, but INPE ensures there is no duplicate reporting.</p>
+    <p>Geographic coordinates of vegetation fire hotspots were extracted from the reference satellite AQUA/MODIS afternoon pass, obtained from the INPE Fire Monitoring Portal.</p>
+    <p>The term "fire" or "wildfire" can mean different things. For example, a fire burning 10,000 square kilometers over a month and a small fire burning a few hectares in hours both qualify as fire events. Using burnt area extent and the number of detected fire hotspots helps make more consistent comparisons between different fire events, according to INPE.</p>
+    <p>Accurate fire detection is challenging due to several factors. Fire fronts narrower than 30 meters are hard to spot, and fires that only burn the forest floor can go unnoticed. Cloud cover can hide fires, but smoke does not. Fires that happen between satellite images may be missed, and fires on one side of a mountain may not be visible to satellites on the other side. Additionally, the location of fire hotspots can be off by up to six kilometers.</p>
+    <p>There is a contact telephone number for residents and riverside communities to report fires, in addition to efforts on the radio networks, local television and blogs, informing residents of the firefighter's contact number, and they call for assistance.</p>
+    <p>Additionally, platforms such as the Fire Panel, managed by the Amazon Protection System (CENSIPAM), and NASA's FIRMS provide information on fires and burnings in Brazil. These platforms identify fire locations using their geographical coordinates, which are then shared with the state’s firefighting team.</p>
+
+    <h1>Who did I talk to?</h1>
+    <p>Here is the list in alphabetical order:</p>
+    <ul>
+        <li><strong>Francisco Barreto</strong> - Captain Star, member of the ecological tourism cooperative and tourist guide</li>
+        <li><strong>Francisco Máximo</strong> - Executive Secretary Col. BM, Executive Secretary of the Civil Defense of Amazonas</li>
+        <li><strong>Gleidson Aranda</strong> - Head of the Department of Climate Change and Conservation Units (Demuc)</li>
+        <li><strong>Joel Bentes</strong> - Superintendent of The Brazilian Institute of Environment and Renewable Natural Resources (IBAMA) in Amazonas</li>
+        <li><strong>Livia Monteiro</strong> - Law student at the Federal University of Amazonas</li>
+        <li><strong>Reinaldo Acris Menezes</strong> - Deputy Commander-General Colonel BM of the Amazonas Military Fire Department</li>
+        <li><strong>Samanta Lacerda</strong> - Coordinator at the State Secretariat for the Environment (SEMA)</li>
+        <li><strong>Vania Lima</strong> - Floating river restaurant waitress and riverside community resident</li>
+        <li><strong>Wilson Castro</strong> - CEO of Iguana Tours</li>
+    </ul>
     </div>
 
     <div class="footer">
         <div class="content">
-            <p>You can find the code for this template <a href="https://github.com/jsoma/page-templates/">here</a>.
-                Delete these lines when you use it, and don't forget to change the <code>title</code> tag!!!</p>
+            <p>You can find more of my stories  <a href="https://www.renatadaou.com/">here</a>.
+              
         </div>
     </div>
 
