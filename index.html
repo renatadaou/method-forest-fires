@@ -12,120 +12,173 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-size: 20px;
-            font-family: 'Lora', Georgia, serif;
-            text-rendering: optimizeLegibility;
-            background-color: #ebf5ec; /* Light green background */
-            color: #333;
-        }
-
-        .content {
-            max-width: 640px;
-            margin: auto;
-            padding: 0 1em;
-        }
-
-        .header {
-            padding: 3em 0;
-            text-align: center;
-            background-color: #c8e6c9;; /* Soft green header background */
-            border-bottom: 5px solid #81c784; /* Slightly darker green border */
-        }
-
-        a {
-            color: #388e3c; /* Dark green link color */
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .footer {
-            background: #a5d6a7; /* Soft green footer background */
-            text-align: center;
-            font-size: 0.8em;
-            margin-top: 4em;
-            padding: 2em 0;
-            border-top: 5px solid #81c784; /* Matching border to header */
-        }
-
-        figure {
-            margin: 0;
-            padding-bottom: 1.2em;
-        }
-
-        figcaption {
-            font-size: 0.8em;
-            text-align: center;
-            margin-top: 0.5em;
-            color: #666;
-        }
-
-        h1 {
-            font-family: 'Lora', Georgia, serif;
-            font-weight: bold;
-            font-size: 2.5em;
-            line-height: 1.2;
-            color: #2e7d32; /* Dark green heading */
-        }
-
-        .subhead {
-            font-family: 'Lora', Georgia, serif;
-            font-style: italic;
-            color: #4caf50; /* Mid-tone green subheading */
-        }
-
-        iframe,
-        img,
-        video {
-            max-width: 100%;
-            border-radius: 8px; /* Rounded corners for media elements */
-        }
-
-        p {
-            line-height: 1.6;
-            margin: 0;
-            padding-bottom: 1.2em;
-        }
-
-        ul {
-            margin: 0;
-            padding-bottom: 1em;
-            line-height: 1.6;
-        }
-
-        iframe {
-            padding-bottom: 1.2em;
-        }
-
-        code {
-            font-family: 'Courier New', monospace;
-            background: #c5e1a5; /* Light green background for code */
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-
-        /* Margin on mobile */
-        @media (max-width: 640px) {
+        <style>
             body {
-                font-size: 18px;
+                margin: 0;
+                font-size: 20px;
+                font-family: 'Lora', Georgia, serif;
+                text-rendering: optimizeLegibility;
+                background-color: #ebf5ec; /* Light green background */
+                color: #333;
             }
-
+          
             .content {
-                padding-left: 0.5em;
-                padding-right: 0.5em;
+                max-width: 640px;
+                margin: auto;
+                padding: 0 1em;
             }
-
+          
+            .header {
+                padding: 3em 0;
+                text-align: center;
+                background-color: #c8e6c9; /* Soft green header background */
+                border-bottom: 5px solid #81c784; /* Slightly darker green border */
+            }
+          
+            a {
+                color: #388e3c; /* Dark green link color */
+                text-decoration: none;
+                font-weight: bold;
+            }
+          
+            a:hover {
+                text-decoration: underline;
+            }
+          
+            .footer {
+                background: #a5d6a7; /* Soft green footer background */
+                text-align: center;
+                font-size: 0.8em;
+                margin-top: 4em;
+                padding: 2em 0;
+                border-top: 5px solid #81c784; /* Matching border to header */
+            }
+          
+            figure {
+                margin: 0;
+                padding-bottom: 1.2em;
+            }
+          
+            figcaption {
+                font-size: 0.8em;
+                text-align: center;
+                margin-top: 0.5em;
+                color: #666;
+            }
+          
             h1 {
-                font-size: 2em;
+                font-family: 'Lora', Georgia, serif;
+                font-weight: bold;
+                font-size: 2.5em;
+                line-height: 1.2;
+                color: #2e7d32; /* Dark green heading */
             }
-        }
-    </style>
+          
+            .subhead {
+                font-family: 'Lora', Georgia, serif;
+                font-style: italic;
+                color: #4caf50; /* Mid-tone green subheading */
+            }
+          
+            iframe,
+            img,
+            video {
+                max-width: 100%;
+                border-radius: 8px; /* Rounded corners for media elements */
+            }
+          
+            p {
+                line-height: 1.6;
+                margin: 0;
+                padding-bottom: 1.2em;
+            }
+          
+            ul {
+                margin: 0;
+                padding-bottom: 1em;
+                line-height: 1.6;
+            }
+          
+            iframe {
+                padding-bottom: 1.2em;
+            }
+          
+            code {
+                font-family: 'Courier New', monospace;
+                background: #c5e1a5; /* Light green background for code */
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+            .graphics-container {
+              display: flex;
+              justify-content: space-between; /* Side by side alignment */
+              gap: 1em; /* Space between the images */
+          }
+          .graphics-container2 {
+            display: flex;
+            justify-content: space-between; /* Side by side alignment */
+            gap: 1em; /* Space between the items */
+            width: 100vw; /* Occupies the full viewport width */
+            box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+            margin: 0; /* Remove any default margin */
+            padding: 0; /* Remove any default padding */
+          }
+          .single-graphic {
+              flex: 1; /* Ensure both graphics take up equal space */
+              text-align: center; /* Center the caption */
+          }
+          
+          .single-graphic img {
+              width: 100%;
+              height: 300px; /* Set a fixed height */
+              object-fit: cover; /* Ensure the image scales properly to fill the height */
+              border-radius: 8px; /* Optional: Rounded corners for the images */
+          }
+          
+          .single-graphic2 {
+            flex: 1; /* Ensure both graphics take up equal space */
+            text-align: center; /* Center the caption */
+            display: flex; /* Use flexbox to center content */
+            justify-content: center; /* Center the image horizontally */
+            align-items: center; /* Center the image vertically if needed */
+          }
+          
+          .single-graphic2 img {
+            width: auto; /* Maintain the aspect ratio */
+            height: 100%; /* Make the height fill the container */
+            max-height: 300px; /* Set a maximum height to control size */
+            object-fit: contain; /* Ensure the image scales without cropping */
+            border-radius: 8px; /* Optional: Rounded corners for the images */
+          }
+          
+            /* Margin on mobile */
+            @media (max-width: 640px) {
+                body {
+                    font-size: 18px;
+                }
+                .graphics-container {
+                  flex-direction: column; /* Stack the images vertically on small screens */
+                  gap: 1.5em; /* Space between stacked images */
+              }
+              
+              .single-graphic img {
+                  height: auto; /* Allow height to adjust for smaller screens */
+              }
+          
+                .content {
+                    padding-left: 0.5em;
+                    padding-right: 0.5em;
+                }
+          
+                h1 {
+                    font-size: 2em;
+                }
+                .underline-link {
+                  text-decoration: underline;
+                }
+               
+            }
+          </style>
     <link href="scrolly-styles.css" rel="stylesheet">
     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
